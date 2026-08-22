@@ -1,4 +1,4 @@
-// 1. Person
+// 1. Create a class Person with attributes name and age. Write a method to display this information.
 class Person {
   constructor(public name: string, public age: number) {}
   displayInfo() {
@@ -9,7 +9,7 @@ console.log("1. Person");
 const p = new Person("Alice", 30);
 p.displayInfo();
 
-// 2. Student extends Person
+// 2. Write a class Student extending Person with an additional attribute grade. Add a method to display all info.
 class Student extends Person {
   constructor(name: string, age: number, public grade: string) {
     super(name, age);
@@ -22,7 +22,7 @@ console.log("\n2. Student");
 const s1 = new Student("Bob", 16, "10th");
 s1.displayAllInfo();
 
-// 3. Car
+// 3. Create a class Car with properties brand, model, year. Write a method to show car info.
 class Car {
   constructor(public brand: string, public model: string, public year: number) {}
   showInfo() {
@@ -33,7 +33,7 @@ console.log("\n3. Car");
 const car = new Car("Toyota", "Corolla", 2020);
 car.showInfo();
 
-// 4. Rectangle
+// 4. Create a class Rectangle with width and height. Write a method to calculate area and perimeter.
 class Rectangle {
   constructor(public width: number, public height: number) {}
   area() {
@@ -47,7 +47,7 @@ console.log("\n4. Rectangle");
 const rect = new Rectangle(4, 5);
 console.log("Area:", rect.area(), "Perimeter:", rect.perimeter());
 
-// 5. BankAccount
+// 5. Create a class BankAccount with balance. Add methods deposit() and withdraw().
 class BankAccount {
   constructor(public balance: number = 0) {}
   deposit(amount: number) {
@@ -63,14 +63,10 @@ class BankAccount {
 console.log("\n5. BankAccount");
 const acct = new BankAccount(100);
 acct.deposit(50);
-try {
-  acct.withdraw(30);
-  console.log("Balance:", acct.balance);
-} catch (e) {
-  console.error(e);
-}
+acct.withdraw(30);
+console.log("Balance:", acct.balance);
 
-// 6. Book
+// 6. Create a class Book with attributes title, author, year.
 class Book {
   constructor(public title: string, public author: string, public year: number) {}
 }
@@ -78,7 +74,7 @@ console.log("\n6. Book");
 const book = new Book("1984", "George Orwell", 1949);
 console.log(book.title, book.author, book.year);
 
-// 7. User with private property name and getter/setter
+// 7. Write a class User with private property name and getter/setter.
 class User {
   constructor(private _name: string) {}
   get name() {
@@ -95,7 +91,7 @@ console.log("Name:", user.name);
 user.name = "Charles";
 console.log("Updated name:", user.name);
 
-// 8. Product and filter
+// 8. Create a Product class with name, price. Create an array of products and filter products with price > 100.
 class Product {
   constructor(public name: string, public price: number) {}
 }
@@ -109,7 +105,7 @@ const products = [
 const expensive = products.filter(p => p.price > 100);
 console.log("Expensive products:", expensive.map(p => p.name));
 
-// 9. Interface Animal with name and method sound()
+// 9. Define an interface Animal with name and method sound().
 interface AnimalInterface {
   name: string;
   sound(): string;
@@ -118,7 +114,7 @@ console.log("\n9. Animal interface usage");
 const animalLike: AnimalInterface = { name: "Generic", sound: () => "..." };
 console.log(animalLike.name, animalLike.sound());
 
-// 10. Account with public, private and readonly fields
+// 10. Create a class Account with public, private and readonly fields.
 class AccountExample {
   public id: number;
   private secret: string;
@@ -137,7 +133,7 @@ console.log("\n10. AccountExample");
 const accEx = new AccountExample(1, "super-secret");
 console.log("Created at:", accEx.createdAt);
 console.log("Reveal secret:", accEx.revealSecret());
-// 11. Base Animal and Dog/Cat with bark() and meow()
+// 11. Create a base class Animal. Extend Dog and Cat classes with methods bark() and meow().
 class AnimalBase {
   constructor(public name: string) {}
 }
@@ -159,7 +155,7 @@ const c = new Cat("Mittens");
 console.log(d.bark());
 console.log(c.meow());
 
-// 12. Flyable and Swimmable
+// 12. Define interfaces Flyable and Swimmable. Implement them in Bird and Fish classes.
 interface Flyable {
   fly(): string;
 }
@@ -185,10 +181,10 @@ const b = new Bird("Sparrow");
 const f = new Fish("Goldie");
 console.log(b.fly());
 console.log(f.swim());
-// 13. Abstract Shape with area(); Square and Circle implement
+// 13. Create an abstract class Shape with method area(). Implement Square and Circle.
 abstract class Shape {
   abstract area(): number;
-  // 25. static method describe (also satisfies item 25)
+  // 25. Create a class Shape with a static method describe(), also satisfies item 25
   static describe() {
     return "A Shape has area() that concrete shapes must implement.";
   }
@@ -217,7 +213,7 @@ const sq = new Square(3);
 const cir = new Circle(2);
 console.log("Square area:", sq.area(), "Circle area:", cir.area().toFixed(2));
 
-// 14. Employee base class, Manager and Developer
+// 14. Create a base class Employee. Extend Manager and Developer with specific methods.
 class Employee {
   constructor(public name: string) {}
   work() {
@@ -242,7 +238,7 @@ const dev = new Developer("Eli");
 console.log(mgr.manageTeam());
 console.log(dev.writeCode());
 
-// 15. Library that can store Book and User objects
+// 15. Create a Library class that can store Book and User objects. Add method to add books.
 class Library {
   books: Book[] = [];
   users: User[] = [];
@@ -260,7 +256,7 @@ lib.addUser(user);
 console.log("Library books:", lib.books.map(b => b.title));
 console.log("Library users:", lib.users.map(u => u.name));
 
-// 16. Generic Box
+// 16. Create a generic class Box that can store any type of value.
 class Box<T> {
   constructor(private value: T) {}
   getValue() {
@@ -276,7 +272,7 @@ console.log("Box value:", numberBox.getValue());
 numberBox.setValue(84);
 console.log("Box new value:", numberBox.getValue());
 
-// 17. Singleton Logger
+// 17. Write a singleton Logger class that logs messages to console.
 class Logger {
   private static _instance: Logger | null = null;
   private constructor() {}
@@ -291,7 +287,7 @@ class Logger {
 console.log("\n17. Singleton Logger");
 Logger.instance.log("Hello singleton");
 
-// 18. Static MathUtil
+// 18. Create a static class MathUtil with methods add(), subtract(), multiply(), divide().
 class MathUtil {
   static add(a: number, b: number) {
     return a + b;
@@ -310,7 +306,7 @@ class MathUtil {
 console.log("\n18. MathUtil static");
 console.log("Add:", MathUtil.add(2, 3), "Divide:", MathUtil.divide(10, 2));
 
-// 19. Method overriding using polymorphism with Animal and subclasses
+// 19. Demonstrate method overriding using polymorphism with Animal and subclasses.
 class AnimalPolymorph {
   constructor(public name: string) {}
   sound() {
@@ -333,7 +329,7 @@ console.log("\n19. Polymorphism");
 const animals: AnimalPolymorph[] = [new DogPoly("Rex"), new CatPoly("Whiskers")];
 animals.forEach(a => console.log(a.sound()));
 
-// 20. Vehicle interface, implement in CarVehicle and Bike
+// 20. Write a Vehicle interface and implement it in Car and Bike classes.
 interface Vehicle {
   start(): string;
   stop(): string;
@@ -379,7 +375,7 @@ repo.add(new Product("Mouse", 25));
 repo.add(new Product("Keyboard", 45));
 console.log("Repo items:", repo.getAll().map(i => i.name));
 
-// 22. Stack
+// 22. Create a class Stack with push, pop, peek, isEmpty methods.
 class Stack<T> {
   private items: T[] = [];
   push(item: T) {
@@ -402,7 +398,7 @@ stack.push(2);
 console.log("Peek:", stack.peek());
 console.log("Pop:", stack.pop(), "IsEmpty:", stack.isEmpty());
 
-// 23. Payment interface and implementations
+// 23. Create an interface Payment with method pay(amount). Implement CashPayment and CardPayment.
 interface Payment {
   pay(amount: number): string;
 }
@@ -426,7 +422,7 @@ const cash = new CashPayment();
 const card = new CardPayment("1234567890123456");
 console.log(cash.pay(50), card.pay(150));
 
-// 24. Abstract Appliance and implementations
+// 24. Create an abstract class Appliance with method turnOn(). Implement Fan and AirConditioner.
 abstract class Appliance {
   abstract turnOn(): string;
 }
@@ -447,7 +443,7 @@ const fan = new Fan();
 const ac = new AirConditioner();
 console.log(fan.turnOn(), ac.turnOn());
 
-// 26. Order with list of products and total price
+// 26. Create a class Order with list of products. Add method to calculate total price.
 class Order {
   constructor(public products: Product[] = []) {}
   totalPrice() {
@@ -461,7 +457,7 @@ console.log("\n26. Order total");
 const order = new Order([new Product("TV", 300), new Product("Cable", 20)]);
 console.log("Order total:", order.totalPrice());
 
-// 27. Teacher extends Person
+// 27. Create a class Teacher that extends Person. Add subject attribute and introduce method.
 class Teacher extends Person {
   constructor(name: string, age: number, public subject: string) {
     super(name, age);
@@ -471,10 +467,10 @@ class Teacher extends Person {
   }
 }
 console.log("\n27. Teacher extends Person");
-const teacher = new Teacher("Frank", 40, "Math");
+const teacher = new Teacher("Thinh", 40, "Math");
 teacher.introduce();
 
-// 28. Animal with protected makeSound(); Dog2/Cat2 override it
+// 28. Create a class Animal with protected method makeSound(). Extend Dog and Cat to override it.
 class AnimalProtected {
   constructor(public name: string) {}
   protected makeSound() {
@@ -504,7 +500,7 @@ const dog2 = new Dog2("Buddy");
 const cat2 = new Cat2("Luna");
 console.log(dog2.callSound(), cat2.callSound());
 
-// 29. Movable interface implemented by CarMovable and Robot
+// 29. Create an interface Movable with method move(). Implement it in Car and Robot.
 interface Movable {
   move(speed: number): string;
 }
@@ -526,7 +522,7 @@ console.log("\n29. Movable");
 const movableCar = new CarMovable("Tesla");
 const robot = new Robot("R2D2");
 console.log(movableCar.move(120), robot.move(3));
-// 30. School with list of Students and Teachers
+// 30. Create a class School with list of Students and Teachers. Add method to display info.
 class School {
   constructor(public students: Student[] = [], public teachers: Teacher[] = []) {}
   addStudent(s: Student) {
