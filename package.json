@@ -1,7 +1,7 @@
 {
   "name": "nguyenhuuthinh_23690091",
   "version": "1.0.0",
-  "description": "",
+  "description": "A TypeScript project focused on Test-Driven Development (TDD) for React Native applications.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tsx": "^4.23.12"
+    "@types/node": "^26.4.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.2"
   }
 }
